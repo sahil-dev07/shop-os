@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import LeftArrow from "../../assets/icons/leftArrow.svg";
-import { agentCardData, agentCategories } from "../../constants/mockData";
+import React, { useState } from 'react';
+import LeftArrow from '../../../assets/icons/leftArrow.svg';
+import { agentCardData, agentCategories } from '../../../constants/mockData';
 
 interface CardData {
   id: number;
@@ -9,11 +9,7 @@ interface CardData {
   imageUrl: string;
 }
 
-const Card: React.FC<CardData> = ({
-  title,
-  description,
-  imageUrl,
-}) => (
+const Card: React.FC<CardData> = ({ title, description, imageUrl }) => (
   <div className="flex flex-col px-6 py-4 rounded-lg shadow-lg bg-white mt-3">
     <img className="h-8 w-8" src={imageUrl} alt={title} />
     <div className=" py-4">
@@ -29,16 +25,25 @@ const AgentList: React.FC = () => {
   return (
     <div className="flex flex-col gap-3 p-6">
       <div className="flex gap-5">
-        <img className='hover:bg-slate-200 p-3 rounded-lg' src={LeftArrow} onClick={() => { history.back() }} />
+        <img
+          className="hover:bg-slate-200 p-3 rounded-lg"
+          src={LeftArrow}
+          onClick={() => {
+            history.back();
+          }}
+        />
         <h2 className="text-3xl font-semibold">Agents</h2>
       </div>
-      <div className="flex items-center gap-3 pb-2">
+      <div className="flex flex-wrap items-center gap-3 pb-2">
         {agentCategories.map((category, index) => (
           <span
-            className={`${selectedCategory === index
-              ? "bg-[#0F172A] text-white"
-              : "border-[#E5E5E5] border"
-              } hover:shadow-md cursor-pointer rounded-full px-[20px] py-[5px]`}
+            key={index}
+            className={`${
+              selectedCategory === index
+                ? 'bg-[#0F172A] text-white'
+                : 'border-[#E5E5E5] border'
+            } 
+                            hover:shadow-md cursor-pointer rounded-full px-6 py-2 min-w-max`}
             onClick={() => setSelectedCategory(index)}
           >
             {category}

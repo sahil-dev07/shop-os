@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Layout from "./commnComponents/Layout"
-import BaseHome from "./feature/home/BaseHome"
-import MyStore from "./feature/myStore/index"
-import WorkFlows from "./feature/workflows/index"
-import AgentList from "./feature/home/Agents"
-import Templates from "./feature/home/Templates"
-import CreateStore from "./feature/myStore/components/CreateStore"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './commnComponents/Layout';
+import BaseHome from './feature/home';
+import MyStore from './feature/myStore/index';
+import WorkFlows from './feature/workflows/index';
+import AgentList from './feature/home/components/Agents';
+import Templates from './feature/home/components/Templates';
+import CreateStore from './feature/myStore/components/CreateStore';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         </Routes>
       </Layout>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

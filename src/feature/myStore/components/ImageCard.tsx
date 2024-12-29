@@ -1,4 +1,4 @@
-import { ImageCardData } from ".."
+import { ImageCardData } from '..';
 
 const ImageCard = ({ title, image }: ImageCardData) => {
   return (
@@ -12,7 +12,7 @@ const ImageCard = ({ title, image }: ImageCardData) => {
       />
       <p className="text-[#808080] mt-2">{title}</p>
     </>
-  )
-}
+  );
+};
 
-export default ImageCard
+export default ImageCard;

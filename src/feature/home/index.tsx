@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const BaseHome = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const BaseHome = () => {
       <div className="flex gap-5 mt-4">
         <button
           className="flex items-center border shadow-md text-sm font-normal border-[#E5E5E5] py-2 px-3 rounded-[20px] hover:bg-[#f0f9ff] focus:outline-none"
-          onClick={() => navigate("/create-store")}
+          onClick={() => navigate('/create-store')}
         >
           <img src="/Fileupload.png" alt="File upload" />
           Upload
@@ -28,7 +28,7 @@ const BaseHome = () => {
 
         <button
           className="flex items-center border shadow-md text-sm border-[#E5E5E5] font-normal py-2 px-3 rounded-[20px] hover:bg-[#f0f9ff] focus:outline-none"
-          onClick={() => navigate("/agents")}
+          onClick={() => navigate('/agents')}
         >
           <img src="/Robot.png" alt="Agents" />
           Agents
@@ -36,7 +36,7 @@ const BaseHome = () => {
 
         <button
           className="flex items-center border shadow-md text-sm font-normal border-[#E5E5E5] py-2 px-3 rounded-[20px] hover:bg-[#f0f9ff] focus:outline-none"
-          onClick={() => navigate("/templates")}
+          onClick={() => navigate('/templates')}
         >
           <img src="/image1.png" alt="Templates" />
           Templates

@@ -1,50 +1,50 @@
-import React, { useState, useRef } from "react"
-import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload"
-import ContentPasteIcon from "@mui/icons-material/ContentPaste"
-import AddLinkIcon from "@mui/icons-material/AddLink"
-import AddToDriveIcon from "@mui/icons-material/AddToDrive"
+import React, { useState, useRef } from 'react';
+import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
+import ContentPasteIcon from '@mui/icons-material/ContentPaste';
+import AddLinkIcon from '@mui/icons-material/AddLink';
+import AddToDriveIcon from '@mui/icons-material/AddToDrive';
 interface FileUploadProps {
-  onFileSelect?: (files: FileList | null) => void
+  onFileSelect?: (files: FileList | null) => void;
 }
 
 const FileUpload: React.FC<FileUploadProps> = ({ onFileSelect }) => {
-  const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null)
-  const fileInputRef = useRef<HTMLInputElement>(null)
+  const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Handle drag events
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault()
-    event.stopPropagation()
-  }
+    event.preventDefault();
+    event.stopPropagation();
+  };
 
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault()
-    event.stopPropagation()
-    const files = event.dataTransfer.files
+    event.preventDefault();
+    event.stopPropagation();
+    const files = event.dataTransfer.files;
     if (files) {
-      setSelectedFiles(files)
-      if (onFileSelect) onFileSelect(files)
+      setSelectedFiles(files);
+      if (onFileSelect) onFileSelect(files);
     }
-  }
-const openGoogleDrive = () => {
-  window.open("https://drive.google.com", "_blank");
-};
+  };
+  const openGoogleDrive = () => {
+    window.open('https://drive.google.com', '_blank');
+  };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files
+    const files = event.target.files;
     if (files) {
-      setSelectedFiles(files)
-      if (onFileSelect) onFileSelect(files)
+      setSelectedFiles(files);
+      if (onFileSelect) onFileSelect(files);
     }
-  }
+  };
 
   const handleUpload = () => {
     if (selectedFiles) {
       // Handle file upload logic here (e.g., send files to a server)
-      console.log("Uploading files:", selectedFiles)
+      console.log('Uploading files:', selectedFiles);
     }
-  }
- console.log("selectedFiles", selectedFiles);
+  };
+  console.log('selectedFiles', selectedFiles);
   return (
     <div className=" rounded-xl mx-auto">
       <div
@@ -108,6 +108,6 @@ const openGoogleDrive = () => {
       </button>
     </div>
   );
-}
+};
 
-export default FileUpload
+export default FileUpload;

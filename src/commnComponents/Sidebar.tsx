@@ -1,26 +1,26 @@
-import React from "react"
-import StoreIcon from "@mui/icons-material/Store"
-import AddHomeIcon from "@mui/icons-material/AddHome"
-import AccountTreeIcon from "@mui/icons-material/AccountTree"
-import { useNavigate } from "react-router-dom"
+import React from 'react';
+import StoreIcon from '@mui/icons-material/Store';
+import AddHomeIcon from '@mui/icons-material/AddHome';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import { useNavigate } from 'react-router-dom';
 
 const sideBarItems = [
   {
     icon: <AddHomeIcon />,
-    navigateTo: '/'
+    navigateTo: '/',
   },
   {
     icon: <StoreIcon />,
-    navigateTo: '/my-store'
+    navigateTo: '/my-store',
   },
   {
     icon: <AccountTreeIcon />,
-    navigateTo: '/work-flows'
+    navigateTo: '/work-flows',
   },
-]
+];
 
 const Sidebar: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="fixed bg-gray-100 h-full flex items-center flex-col w-[80px] border-r-[1px]">
       <img
@@ -44,6 +44,6 @@ const Sidebar: React.FC = () => {
       </ul>
     </div>
   );
-}
+};
 
-export default Sidebar
+export default Sidebar;
